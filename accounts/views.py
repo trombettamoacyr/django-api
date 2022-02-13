@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Transaction
 from .form import TransactionForm
 
@@ -13,5 +13,5 @@ def create_transaction(request):
     form = TransactionForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return list_transactions(request)
+        return redirect('url_list_transactions')
     return render(request, 'transactions/form.html', {'form': form})

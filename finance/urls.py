@@ -19,7 +19,7 @@ from accounts.views import home, list_transactions, create_transaction
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('transactions', list_transactions),
+    path('transactions', list_transactions, name='url_list_transactions'),
     path('transactions/new', create_transaction),
     path('', home),
 ]
