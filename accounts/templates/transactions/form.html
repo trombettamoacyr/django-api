@@ -13,6 +13,7 @@
     <title>Finance App</title>
 </head>
 <div class="container">
+
     <body>
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
@@ -23,9 +24,16 @@
         <form method="POST">
             {% csrf_token %}
             {{ form.as_p}}
+
             <button type="submit" value="save" class="btn btn-success">Save</button>
+
+            {% if id != None %}
+            <a href="{% url 'url_delete_transaction' id %}" class="btn btn-danger">Delete</a>
+            {% endif %}
+
             <a class="btn btn-info" href="/transactions">Back</a>
         </form>
     </body>
 </div>
+
 </html>
