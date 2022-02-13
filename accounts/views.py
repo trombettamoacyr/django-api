@@ -26,7 +26,7 @@ def update_transaction(request, pk):
     return render(request, 'transactions/form.html', {'form': form, 'id': transaction.id})
 
 def delete_transaction(request, pk):
-    Transaction.objects.filter(pk=pk).delete()
-    print('teste')
+    transaction = Transaction.objects.get(pk=pk)
+    transaction.delete()
     return list_transactions(request)
 
