@@ -1,5 +1,5 @@
 # finance-app
-This django project is a mvc application of a simple store.
+This django project is a mvc application of a simple finance app.
 
 ### Run migration
 ``` 
